@@ -46,7 +46,7 @@ public class InteractListener implements Listener {
 
                             for (int i = 0; i < main.getConfig().getInt("config.teamsize"); i++){
                                try {
-                                    itemBuilder.setLore("§a" + GameManager.playersInTeam.get(s).get(i).getName());
+                                    itemBuilder.setLore("§a" + GameManager.playersInTeam.get("0" + s).get(i).getName());
                                 } catch (Exception e2){
                                     itemBuilder.setLore("§8<nicht belegt>");
                                 }

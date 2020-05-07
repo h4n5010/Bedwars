@@ -5,11 +5,12 @@ import com.h4n5010.functions.GameState;
 import com.h4n5010.listener.*;
 import com.h4n5010.manager.ScoreboardManager;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.scoreboard.Score;
 
 public class Main extends JavaPlugin {
 
     public String prefix = "§aBedWars: ";
-    public Integer minPlayers = 4;
+    public ScoreboardManager scoreboardManager;
 
     @Override
     public void onEnable() {
@@ -37,7 +38,7 @@ public class Main extends JavaPlugin {
     initializes all commands used in plugin
      */
     private void initManager() {
-        new ScoreboardManager(this);
+        scoreboardManager = new ScoreboardManager(this);
     }
     /*
     initializes all listener used in plugin
@@ -50,7 +51,7 @@ public class Main extends JavaPlugin {
         new WeatherChangeListener(this);
         new BuildListener(this);
         new InteractListener(this);
-
+        new ItemDropListener(this);
     }
 }
 

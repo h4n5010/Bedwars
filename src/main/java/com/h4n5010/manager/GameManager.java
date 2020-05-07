@@ -1,6 +1,7 @@
 package com.h4n5010.manager;
 
 import com.h4n5010.functions.GameState;
+import com.h4n5010.main.Main;
 import org.bukkit.entity.Player;
 
 import java.util.ArrayList;
@@ -37,6 +38,8 @@ public class GameManager {
         }
         list.add(player);
         playersInTeam.put(team, list);
+
+        Main.getPlugin(Main.class).scoreboardManager.setTeam(player.getDisplayName(), team);
     }
 
 

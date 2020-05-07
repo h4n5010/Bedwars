@@ -27,10 +27,7 @@ public class InventoryClickListener implements Listener {
         if (GameState.getGameState() == GameState.LOBBY){
             if(e.getCurrentItem() != null){
                 String team = e.getCurrentItem().getItemMeta().getDisplayName().substring(9);
-                System.out.println(team);
-                if (!GameManager.getTeamPlayers(team).contains((Player)e.getWhoClicked())) {
-                    GameManager.setPlayerTeam((Player) e.getWhoClicked(), team);
-                }
+                GameManager.setPlayerTeam((Player) e.getWhoClicked(), team);
                 e.getWhoClicked().closeInventory();
                 e.getWhoClicked().sendMessage(main.prefix + "§a You are now in §bTeam #0" + team );
             }

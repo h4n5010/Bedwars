@@ -29,7 +29,9 @@ public class ScoreboardManager {
     public void generate() {
         scoreboard = Bukkit.getScoreboardManager().getNewScoreboard();
         Objective objective = scoreboard.registerNewObjective("dummy", "teams");
-        System.out.println("TEAMS:" + main.getConfig().getConfigurationSection("location.spawn").getKeys(false));
+
+        scoreboard.registerNewTeam("001default").setPrefix("§7");
+
         for(String teamnumber : main.getConfig().getConfigurationSection("location.spawn").getKeys(false)){
             Team team = scoreboard.registerNewTeam("00000" + teamnumber);
             team.setPrefix("§bTeam #0" + teamnumber + " | §7");
@@ -38,7 +40,7 @@ public class ScoreboardManager {
 
             GameManager.playersInTeam.put(teamnumber, new ArrayList<>());
         }
-        Bukkit.getOnlinePlayers().forEach(p->p.setScoreboard(scoreboard));
+
 
     }
 

@@ -24,9 +24,13 @@ public class JoinListener implements Listener {
     public void onJoin(PlayerJoinEvent e){
         if (GameState.getGameState() == GameState.LOBBY) {
             e.setJoinMessage(main.prefix + "§a" + e.getPlayer().getName() + " §7has joined the game!");
-            PlayerConfig.initialSetup(e.getPlayer());
+
             try {
+                PlayerConfig.initialSetup(e.getPlayer());
                 e.getPlayer().teleport((Location) main.getConfig().get("location.lobby"));
+                main.scoreboardManager.setTeam(e.getPlayer().getDisplayName(), "001default");
+                Bukkit.getOnlinePlayers().forEach(p->main.scoreboardManager.show(e.getPlayer()));
+
             } catch (NullPointerException nullex) {
                 e.getPlayer().sendMessage(main.prefix + "§cThe plugin is not completely initialized!!");
             }
