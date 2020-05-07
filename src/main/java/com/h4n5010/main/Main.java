@@ -14,8 +14,8 @@ public class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         initCommands();
-        initListener();
         initManager();
+        initListener();
         GameState.setGameState(GameState.LOBBY);
     }
 
@@ -46,9 +46,11 @@ public class Main extends JavaPlugin {
         new JoinListener(this);
         new EntityDamageListener(this);
         new FoodLevelChangeListener(this);
+        new InventoryClickListener(this);
         new WeatherChangeListener(this);
         new BuildListener(this);
         new InteractListener(this);
+
     }
 }
 

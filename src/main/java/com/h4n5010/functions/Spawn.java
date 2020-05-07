@@ -15,7 +15,7 @@ public class Spawn {
      * @return
      */
     public static Integer setSpawn(Location location, Main main){
-        main.getConfig().set("location.spawn" + id, location);
+        main.getConfig().set("location.spawn." + id, location);
         main.saveConfig();
         return id++;
     }

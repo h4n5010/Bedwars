@@ -7,6 +7,7 @@
       <element id="file-copy" path="$PROJECT_DIR$/src/main/java/plugin.yml" />
       <element id="module-output" name="BedWars.main" />
       <element id="module-source" name="BedWars.main" />
+      <element id="library" level="project" name="spigot-api-1.8.8-R0.1-20160221.082514-43" />
     </root>
   </artifact>
 </component>

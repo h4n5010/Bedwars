@@ -21,7 +21,7 @@ public class PlayerConfig {
         player.setMaxHealth(20);
         player.setAllowFlight(false);
         player.setLevel(0);
-        ItemStack stack = new ItemBuilder(Material.BEDROCK, 1).setName("choose your team").toItemStack();
+        ItemStack stack = new ItemBuilder(Material.DIAMOND_SWORD).setDisplayName("choose your team").build();
         player.getInventory().setItem(0, stack);
     }
 

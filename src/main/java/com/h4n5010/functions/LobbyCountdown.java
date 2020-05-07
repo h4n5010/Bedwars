@@ -21,7 +21,7 @@ public class LobbyCountdown {
         if (force || Bukkit.getOnlinePlayers().size() >= Integer.parseInt((String) main.getConfig().get("game.teamsize"))){
             if(!isStarted){
                 if (force) {
-                    count = 60;
+                    count = 5;
                 }
                 sched = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(Main.class), new Runnable() {
                     @Override
