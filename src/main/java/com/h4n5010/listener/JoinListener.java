@@ -3,6 +3,7 @@ package com.h4n5010.listener;
 import com.h4n5010.functions.GameState;
 import com.h4n5010.functions.PlayerConfig;
 import com.h4n5010.main.Main;
+import com.h4n5010.manager.ScoreboardManager;
 import jdk.nashorn.internal.objects.annotations.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;

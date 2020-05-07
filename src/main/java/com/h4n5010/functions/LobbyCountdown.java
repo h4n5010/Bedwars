@@ -20,11 +20,13 @@ public class LobbyCountdown {
         if (GameState.getGameState() != GameState.LOBBY) return;
         if (force || Bukkit.getOnlinePlayers().size() >= Integer.parseInt((String) main.getConfig().get("game.teamsize"))){
             if(!isStarted){
-                if (force) count = 5;
+                if (force) {
+                    count = 60;
+                }
                 sched = Bukkit.getScheduler().scheduleSyncRepeatingTask(Main.getPlugin(Main.class), new Runnable() {
                     @Override
                     public void run() {
-                        if (count == 60 || count == 45 || count == 30 || count == 15 || count <= 5 && count != 0){
+                        if (count <= 60 && count != 0){
                             Bukkit.getOnlinePlayers().forEach(p -> p.sendMessage(Main.getPlugin(Main.class).prefix +
                                     "§aGame starts in §8" + count + " seconds!"));
                             count--;

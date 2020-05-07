@@ -3,6 +3,7 @@ package com.h4n5010.main;
 import com.h4n5010.commands.MinecraftCommands;
 import com.h4n5010.functions.GameState;
 import com.h4n5010.listener.*;
+import com.h4n5010.manager.ScoreboardManager;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
@@ -14,6 +15,7 @@ public class Main extends JavaPlugin {
     public void onEnable() {
         initCommands();
         initListener();
+        initManager();
         GameState.setGameState(GameState.LOBBY);
     }
 
@@ -32,6 +34,12 @@ public class Main extends JavaPlugin {
         new MinecraftCommands(this);
     }
     /*
+    initializes all commands used in plugin
+     */
+    private void initManager() {
+        new ScoreboardManager(this);
+    }
+    /*
     initializes all listener used in plugin
      */
     private void initListener() {
@@ -40,6 +48,7 @@ public class Main extends JavaPlugin {
         new FoodLevelChangeListener(this);
         new WeatherChangeListener(this);
         new BuildListener(this);
+        new InteractListener(this);
     }
 }
 

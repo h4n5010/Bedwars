@@ -39,13 +39,14 @@ public class MinecraftCommands implements CommandExecutor {
             player.sendMessage(main.prefix + "§aYou set the Spectator spawn!");
         }
         else if (args.length == 1 && args[0].equalsIgnoreCase("setTeamSize")){
-            main.getConfig().set("game.teamsize", Integer.parseInt(args[1]));
+            main.getConfig().set("config.teamsize", Integer.parseInt(args[1]));
             main.saveConfig();
             player.sendMessage(main.prefix + "§aYou set the team size to " + String.valueOf(args[1]));
         }
-        else if (args.length == 1 && args[0].equalsIgnoreCase("start")){
-            boolean force = args[1].equalsIgnoreCase("1");
-            LobbyCountdown.start(force);
+        else if (args.length == 1 && args[0].equalsIgnoreCase("startGame")){
+            //boolean force = args[1].equalsIgnoreCase("1");
+            player.sendMessage(main.prefix + "§aYou set the start to");
+            LobbyCountdown.start(true);
         } else {
             showHelp(player);
         }
