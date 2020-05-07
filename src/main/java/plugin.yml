@@ -1,7 +1,7 @@
 name: BedWars
 version: 0.1
 author: Laurence Hupp
-main: com.h4n5010.main
+main: com.h4n5010.main.Main
 api-version: 1.15
 commands:
   bedwars:

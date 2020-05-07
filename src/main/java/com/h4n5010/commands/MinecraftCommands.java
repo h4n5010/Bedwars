@@ -1,5 +1,6 @@
 package com.h4n5010.commands;
 
+import com.h4n5010.functions.LobbyCountdown;
 import com.h4n5010.functions.Spawn;
 import com.h4n5010.main.Main;
 import org.bukkit.Bukkit;
@@ -40,7 +41,11 @@ public class MinecraftCommands implements CommandExecutor {
         else if (args.length == 1 && args[0].equalsIgnoreCase("setTeamSize")){
             main.getConfig().set("game.teamsize", Integer.parseInt(args[1]));
             main.saveConfig();
-            player.sendMessage(main.prefix + "§aYou set the team size to " + args[1]);
+            player.sendMessage(main.prefix + "§aYou set the team size to " + String.valueOf(args[1]));
+        }
+        else if (args.length == 1 && args[0].equalsIgnoreCase("start")){
+            boolean force = args[1].equalsIgnoreCase("1");
+            LobbyCountdown.start(force);
         } else {
             showHelp(player);
         }
