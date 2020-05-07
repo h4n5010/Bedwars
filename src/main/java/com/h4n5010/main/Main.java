@@ -2,10 +2,7 @@ package com.h4n5010.main;
 
 import com.h4n5010.commands.MinecraftCommands;
 import com.h4n5010.functions.GameState;
-import com.h4n5010.listener.EntityDamageListener;
-import com.h4n5010.listener.FoodLevelChangeListener;
-import com.h4n5010.listener.JoinListener;
-import com.h4n5010.listener.WeatherChangeListener;
+import com.h4n5010.listener.*;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class Main extends JavaPlugin {
@@ -42,6 +39,7 @@ public class Main extends JavaPlugin {
         new EntityDamageListener(this);
         new FoodLevelChangeListener(this);
         new WeatherChangeListener(this);
+        new BuildListener(this);
     }
 }
 

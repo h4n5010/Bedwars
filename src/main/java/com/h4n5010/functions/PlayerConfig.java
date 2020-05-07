@@ -10,8 +10,6 @@ import org.bukkit.inventory.ItemStack;
 
 public class PlayerConfig {
 
-    private static Main main;
-
     public static void initialSetup(Player player){
         player.setGameMode(GameMode.SURVIVAL);
         player.getInventory().clear();
@@ -23,9 +21,8 @@ public class PlayerConfig {
         player.setMaxHealth(20);
         player.setAllowFlight(false);
         player.setLevel(0);
-        player.teleport((Location) main.getConfig().get("location.lobby"));
-        ItemStack stack = new ItemBuilder(Material.BED, 1).setName("choose your team").toItemStack();
-        player.getInventory().setItem(0, stack);
+        //ItemStack stack = new ItemBuilder(Material.BED_BLOCK, 1).setName("choose your team").toItemStack();
+        //player.getInventory().setItem(0, stack);
     }
 
 }
