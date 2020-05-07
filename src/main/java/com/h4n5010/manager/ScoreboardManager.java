@@ -1,5 +1,6 @@
 package com.h4n5010.manager;
 
+import com.h4n5010.functions.ScoreboardTeams;
 import com.h4n5010.main.Main;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
@@ -38,7 +39,7 @@ public class ScoreboardManager {
             team.setAllowFriendlyFire(false);
             teams.put(teamnumber, team);
 
-            GameManager.playersInTeam.put(teamnumber, new ArrayList<>());
+            ScoreboardTeams.playersInTeam.put(teamnumber, new ArrayList<>());
         }
 
 

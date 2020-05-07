@@ -3,6 +3,7 @@ package com.h4n5010.listener;
 import com.h4n5010.builder.ItemBuilder;
 import com.h4n5010.functions.GameState;
 import com.h4n5010.functions.PlayerConfig;
+import com.h4n5010.functions.ScoreboardTeams;
 import com.h4n5010.main.Main;
 import com.h4n5010.manager.GameManager;
 import org.bukkit.Bukkit;
@@ -46,7 +47,7 @@ public class InteractListener implements Listener {
 
                             for (int i = 0; i < main.getConfig().getInt("config.teamsize"); i++){
                                try {
-                                    itemBuilder.setLore("§a" + GameManager.playersInTeam.get("0" + s).get(i).getName());
+                                    itemBuilder.setLore("§a" + ScoreboardTeams.playersInTeam.get("0" + s).get(i).getName());
                                 } catch (Exception e2){
                                     itemBuilder.setLore("§8<nicht belegt>");
                                 }

@@ -1,6 +1,7 @@
 package com.h4n5010.listener;
 
 import com.h4n5010.functions.GameState;
+import com.h4n5010.functions.ScoreboardTeams;
 import com.h4n5010.main.Main;
 import com.h4n5010.manager.GameManager;
 import org.bukkit.Bukkit;
@@ -27,7 +28,7 @@ public class InventoryClickListener implements Listener {
         if (GameState.getGameState() == GameState.LOBBY){
             if(e.getCurrentItem() != null){
                 String team = e.getCurrentItem().getItemMeta().getDisplayName().substring(9);
-                GameManager.setPlayerTeam((Player) e.getWhoClicked(), team);
+                ScoreboardTeams.setPlayerTeam((Player) e.getWhoClicked(), team);
                 e.getWhoClicked().closeInventory();
                 e.getWhoClicked().sendMessage(main.prefix + "§a You are now in §bTeam #0" + team );
             }
